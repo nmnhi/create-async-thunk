@@ -1,8 +1,8 @@
-import Blog from 'pages/blog'
-import React from 'react'
+import Blog from "pages/blog";
+import React from "react";
 
 function App() {
-  return <Blog />
+  return <Blog />;
 }
 
-export default App
+export default App;

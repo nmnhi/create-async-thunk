@@ -1,2 +1,2 @@
-import CreatePost from './CreatePost'
-export default CreatePost
+import CreatePost from "./CreatePost";
+export default CreatePost;
