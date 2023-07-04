@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice, nanoid } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice, current, nanoid } from "@reduxjs/toolkit";
 import { initialPostList } from "constants/blog";
 import { Post } from "types/blog.type";
 
@@ -54,6 +54,19 @@ const blogSlice = createSlice({
         payload: { ...post, id: nanoid() },
       }),
     },
+  },
+  extraReducers(builder) {
+    builder
+      .addMatcher(
+        (action) => action.type.includes("cancel"),
+        (state, action) => {
+          console.log(current(state));
+          // console.log(action);
+        }
+      )
+      .addDefaultCase((state, action) => {
+        console.log(`action type: ${action.type}`, current(state));
+      });
   },
 });
 
